@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio - Code College Projects</title>
+
+    <!-- Core Project Stylesheet -->
+    <link rel="stylesheet" href="style.css">
+
+    <!-- Font Awesome Icon Library v6.4.0 -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<body>
+
+    <!-- ==========================================
+         NAVIGATION BAR
+         ========================================== -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="nav-logo">HOME</a>
+
+            <ul class="nav-links">
+                <!-- Links targeting sections on the main landing page -->
+                <li><a href="index.html#portfolio">PORTFOLIO</a></li>
+                <li><a href="index.html#about">ABOUT</a></li>
+                <li><a href="index.html#contact">CONTACT</a></li>
+
+                <!-- Active page highlight for the college subpage -->
+                <li><a href="college.html" class="nav-college-btn college-active"><i
+                            class="fa-solid fa-graduation-cap"></i> CODE COLLEGE</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- ==========================================
+         HERO BANNER SECTION
+         ========================================== -->
+    <header class="college-hero">
+        <div class="hero-content">
+            <h1>CODE COLLEGE PROJECTS</h1>
+
+            <!-- Decorative CSS line divider with central icon -->
+            <div class="divider">
+                <div class="line"></div>
+                <i class="fa-solid fa-graduation-cap"></i>
+                <div class="line"></div>
+            </div>
+
+            <p class="subtitle">Academic Practical Work & Text Book Labs</p>
+        </div>
+    </header>
+
+    <!-- ==========================================
+         PORTFOLIO GRID SECTION
+         ========================================== -->
+    <section class="portfolio">
+        <!-- Flexbox/Grid wrapper for project showcase items -->
+        <div class="portfolio-grid">
+
+            <!-- Item 1: Interactive Story
+                 Note: Custom data-* attributes hold content rendered dynamically by script.js inside the modal -->
+            <div class="portfolio-item item-orange" data-title="INTERACTIVE STORY ADVENTURE" data-icon="fa-book"
+                data-link="Code College Projects/myStory/myStory.html"
+                data-desc="This project is an interactive, choice-driven story built using HTML, CSS, and JavaScript. The user takes on the role of Thor and progresses through the story by entering decisions that influence the storyline and outcome. The program dynamically updates the narrative, validates user input, and reveals different story paths based on the choices made. This project demonstrates DOM manipulation, event handling, and conditional logic.">
+                <div class="inner-circle"><i class="fa-solid fa-book"></i></div>
+
+                <!-- Vector icons illustrating the technology stack used -->
+                <div class="tech-badge-container">
+                    <div class="tech-badge" title="HTML5"><i class="fa-brands fa-html5"></i></div>
+                    <div class="tech-badge" title="CSS3"><i class="fa-brands fa-css3-alt"></i></div>
+                    <div class="tech-badge" title="JavaScript"><i class="fa-brands fa-js"></i></div>
+                </div>
+            </div>
+
+            <!-- Item 2: Confetti Cuisine -->
+            <div class="portfolio-item item-red" data-title="CONFETTI CUISINE" data-icon="fa-diagram-project"
+                data-link="https://full-stack-django-project-pi.vercel.app/"
+                data-desc="An application built as part of the MERN stack coursework utilizing an MVC architecture, Express routing, and MongoDB data modeling to handle user registrations and recipe subscriptions seamlessly.">
+                <div class="inner-circle"><i class="fa-solid fa-diagram-project"></i></div>
+
+                <div class="tech-badge-container">
+                    <div class="tech-badge" title="Node.js"><i class="fa-brands fa-node-js"></i></div>
+                    <div class="tech-badge" title="JavaScript"><i class="fa-brands fa-js"></i></div>
+                </div>
+            </div>
+
+            <!-- Item 3: Moving Car Animation -->
+            <div class="portfolio-item item-teal" data-title="MOVING CAR ANIMATION" data-icon="fa-car-side"
+                data-link="Code College Project/Luxury Watch Collection/index.html"
+                data-desc="A sleek, highly responsive luxury watch collection webpage designed utilizing Bootstrap alongside customized CSS layers to create an elegant user interface optimized across desktop and mobile screens.">
+                <div class="inner-circle"><i class="fa-solid fa-car-side"></i></div>
+
+                <div class="tech-badge-container">
+                    <div class="tech-badge" title="HTML5"><i class="fa-brands fa-html5"></i></div>
+                    <div class="tech-badge" title="CSS3"><i class="fa-brands fa-css3-alt"></i></div>
+                    <div class="tech-badge" title="JavaScript"><i class="fa-brands fa-js"></i></div>
+                </div>
+            </div>
+
+            <!-- Item 4: Expense Tracker -->
+            <div class="portfolio-item item-purple" data-title="EXPENSE TRACKER" data-icon="fa-cart-shopping"
+                data-link="Code College Project/Expense Tracker/index.html"
+                data-desc="A dynamic transaction and financial management platform featuring a React-based frontend integrated with Firebase Firestore for persistent data storage and secure user authentication.">
+                <div class="inner-circle"><i class="fa-solid fa-cart-shopping"></i></div>
+
+                <div class="tech-badge-container">
+                    <div class="tech-badge" title="React"><i class="fa-brands fa-react"></i></div>
+                    <div class="tech-badge" title="JavaScript"><i class="fa-brands fa-js"></i></div>
+                </div>
+            </div>
+
+            <!-- Item 5: Weather App -->
+            <div class="portfolio-item item-blue" data-title="SOUTH AFRICAN WEATHER APP" data-icon="fa-dice"
+                data-link="Code College Project/South African Weather App/index.html"
+                data-desc="A real-time weather tracking web application built using React components that fetches and displays live meteorological data profiles across major regional hubs including Johannesburg, Cape Town, and Durban.">
+                <div class="inner-circle"><i class="fa-solid fa-dice"></i></div>
+
+                <div class="tech-badge-container">
+                    <div class="tech-badge" title="React"><i class="fa-brands fa-react"></i></div>
+                    <div class="tech-badge" title="JavaScript"><i class="fa-brands fa-js"></i></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==========================================
+         FOOTER SECTION
+         ========================================== -->
+    <footer class="footer">
+        <p>Copyright &copy; My Website 2026</p>
+    </footer>
+
+    <!-- ==========================================
+         DYNAMIC LIGHTBOX MODAL POPUP
+         Hidden by default via CSS layout; toggled active via JavaScript
+         ========================================== -->
+    <div class="modal-overlay" id="projectModal">
+        <div class="modal-container">
+
+            <!-- Modal Close Action Button -->
+            <button class="modal-close" id="closeModal">&times;</button>
+
+            <!-- Dynamic Placeholder Elements managed by script.js -->
+            <h2 id="modalTitle" class="modal-title">PROJECT TITLE</h2>
+
+            <div class="divider dark-divider">
+                <div class="line"></div>
+                <i class="fa-solid fa-gear" id="modalIcon"></i>
+                <div class="line"></div>
+            </div>
+
+            <!-- Interactive Clickable Card linked directly to live projects -->
+            <a href="#" id="modalProjectLink" target="_blank" style="text-decoration: none; display: block;">
+                <div id="modalVisualBlock" class="modal-preview-card">
+                    <div class="inner-circle"><i id="modalInnerIcon" class="fa-solid"></i></div>
+                </div>
+            </a>
+
+            <p id="modalDescription" class="modal-description">Project description goes here...</p>
+        </div>
+    </div>
+
+    <!-- Interactivity Controller Script -->
+    <script src="script.js"></script>
+</body>
+
+</html>

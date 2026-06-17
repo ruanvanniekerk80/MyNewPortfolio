@@ -1,0 +1,60 @@
+* {
+   box-sizing: border-box;
+
+}
+
+body{
+   background-image: linear-gradient(to right,blue,white);
+}
+.mainContainer {
+   max-width: 1000px;
+   height: 500px;
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   justify-content: center;
+
+
+
+}
+
+#guessingContainer {
+   background-color: rgb(171, 178, 249);
+   height: 350px;
+   width: 500px;
+   text-align: center;
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+   align-items: center;
+   border: 2px solid black;
+   box-shadow: 3px 5px 10px;
+
+}
+
+
+#btn {
+   padding: 10px;
+   margin-top: 20px;
+   border-radius: 10px;
+   border: none;
+   background-color: rgb(113, 136, 237);
+}
+
+#btn:hover {
+   background-color: rgba(133, 136, 237, .8);
+}
+
+#result {
+   height: 40px;
+   width: 90%;
+   margin-bottom: 4px;
+   font-size: 1.4em;
+
+
+}
+
+input {
+   width: 40%;
+   border: 1px solid black;
+}

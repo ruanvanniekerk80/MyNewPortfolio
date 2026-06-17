@@ -1,0 +1,738 @@
+/* ==========================================
+   1. GLOBAL STYLES & VARIABLES (SLEEK DARK MODE)
+   ========================================== */
+:root {
+    /* Main Theme Surface Colors (Low Eye Strain) */
+    --bg-dark: #12141c;
+    /* Rich, deep navy/charcoal base background */
+    --bg-surface: #1a1d29;
+    /* Slightly lighter dark surface for card containers */
+    --bg-surface-elev: #222738;
+    /* Elevated background layer for subtle contrast */
+
+    /* Elegant Accent Tones */
+    --accent-red: #e04c4c;
+    /* Clean, premium crimson instead of stark red */
+    --college-color: #3498db;
+    /* Soft, vibrant blue for academic markers */
+
+    /* High Ergonomic Typography Colors */
+    --text-light: #f1f3f9;
+    /* Off-white to prevent stark text glow fatigue */
+    --text-muted: #9aa4bf;
+    /* Muted slate blue for supporting reading text */
+    --nav-bg: #0d0f15;
+    /* Ultra-dark crisp backing header track */
+
+    /* Premium Desaturated Muted Project Card Palettes */
+    --item-orange: #d37c3a;
+    --item-red: #c0392b;
+    --item-teal: #2c9680;
+    --item-purple: #7d50a3;
+    --item-blue: #297fb8;
+
+    /* Vivid Technology Brand Colors for Skills Display Section */
+    --tech-html: #e34f26;
+    --tech-css: #1572b6;
+    --tech-js: #f7df1e;
+    --tech-react: #61dafb;
+    --tech-node: #339933;
+    --tech-express: #ffffff;
+    --tech-python: #3776ab;
+    --tech-django: #092e20;
+    --tech-mern: #47a248;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Montserrat', 'Segoe UI', sans-serif;
+}
+
+body {
+    background-color: var(--bg-dark);
+    color: var(--text-light);
+    scroll-behavior: smooth;
+    -webkit-font-smoothing: antialiased;
+}
+
+/* ==========================================
+   2. REUSABLE COMPONENTS (Dividers, Headings)
+   ========================================== */
+h2 {
+    font-size: 2.5rem;
+    text-align: center;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    color: var(--text-light);
+}
+
+.divider {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 1.5rem 0 2.5rem 0;
+}
+
+.divider .line {
+    width: 80px;
+    height: 3px;
+    background-color: rgba(255, 255, 255, 0.2);
+    border-radius: 2px;
+}
+
+.divider i {
+    font-size: 1.3rem;
+    margin: 0 1.2rem;
+    color: var(--text-muted);
+}
+
+/* Accent override configuration */
+.dark-divider .line {
+    background-color: var(--accent-red);
+    opacity: 0.7;
+}
+
+.dark-divider i {
+    color: var(--accent-red);
+}
+
+/* ==========================================
+   3. NAVIGATION BAR & SPY CONTROLS
+   ========================================== */
+.navbar {
+    background-color: var(--nav-bg);
+    padding: 1.2rem 2rem;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.03);
+}
+
+.nav-container {
+    max-width: 1100px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nav-logo {
+    color: var(--text-light);
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 1.4rem;
+    letter-spacing: 1px;
+    transition: color 0.2s;
+}
+
+.nav-logo:hover {
+    color: var(--accent-red);
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+    gap: 1.5rem;
+    align-items: center;
+}
+
+.nav-links a.nav-item-link {
+    color: var(--text-muted);
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 0.85rem;
+    padding: 0.5rem 1rem;
+    border-radius: 6px;
+    transition: all 0.2s ease;
+}
+
+.nav-links a.nav-item-link:hover {
+    color: var(--text-light);
+}
+
+/* Modern Active Highlight Item state UI matching user request */
+.nav-links a.nav-item-link.highlight-active {
+    background-color: rgba(224, 76, 76, 0.15);
+    /* Soft crimson glow overlay background tint */
+    color: var(--accent-red);
+}
+
+/* Standout Button Layout for External View Track */
+.nav-college-btn {
+    background-color: transparent;
+    border: 2px solid var(--college-color);
+    color: var(--college-color) !important;
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 0.85rem;
+    padding: 0.5rem 1rem;
+    border-radius: 6px;
+    transition: all 0.2s ease;
+}
+
+.nav-college-btn:hover,
+.nav-college-btn.college-active {
+    background-color: var(--college-color);
+    color: var(--text-light) !important;
+    box-shadow: 0 4px 12px rgba(52, 152, 219, 0.3);
+}
+
+/* ==========================================
+   4. HERO SECTIONS (HOME & COLLEGE)
+   ========================================== */
+.hero {
+    background-color: var(--bg-surface);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.03);
+    padding: 7rem 2rem;
+    text-align: center;
+}
+
+.college-hero {
+    background-color: var(--bg-surface);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.03);
+    padding: 7rem 2rem;
+    text-align: center;
+}
+
+.avatar {
+    width: 180px;
+    height: 180px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 1.5rem;
+    border: 4px solid var(--bg-surface-elev);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+}
+
+.hero h1 {
+    font-size: 3rem;
+    font-weight: 700;
+    color: var(--text-light);
+    letter-spacing: 2px;
+}
+
+.college-hero h1 {
+    font-size: 3rem;
+    font-weight: 700;
+    color: var(--college-color);
+    letter-spacing: 2px;
+}
+
+.subtitle {
+    font-size: 1.3rem;
+    font-weight: 400;
+    color: var(--text-muted);
+}
+
+/* ==========================================
+   5. PORTFOLIO SECTION & TECH BADGES
+   ========================================== */
+.portfolio {
+    background-color: var(--bg-dark);
+    padding: 6rem 2rem;
+}
+
+.portfolio-grid {
+    max-width: 1100px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2.5rem;
+    justify-items: center;
+}
+
+.portfolio-item {
+    width: 100%;
+    max-width: 360px;
+    height: 230px;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    position: relative;
+    /* Essential reference context to snap badges inside card layout */
+    transition: transform 0.25s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.25s ease;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+}
+
+.portfolio-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+}
+
+.inner-circle {
+    width: 110px;
+    height: 110px;
+    border-radius: 50%;
+    background-color: rgba(0, 0, 0, 0.15);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    transition: background-color 0.2s;
+}
+
+.portfolio-item:hover .inner-circle {
+    background-color: rgba(0, 0, 0, 0.25);
+}
+
+.inner-circle i {
+    font-size: 3rem;
+    color: var(--text-light);
+    opacity: 0.9;
+}
+
+/* Tech Badges Container Layout alignment */
+.tech-badge-container {
+    position: absolute;
+    bottom: 15px;
+    left: 20px;
+    display: flex;
+    gap: 8px;
+    z-index: 5;
+}
+
+/* Round Badge Shapes for Tech Profile Track */
+.tech-badge {
+    width: 34px;
+    height: 34px;
+    background-color: rgba(0, 0, 0, 0.25);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: var(--text-light);
+    font-size: 1rem;
+    transition: transform 0.2s ease, background-color 0.2s ease;
+}
+
+.tech-badge:hover {
+    transform: scale(1.18);
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+.tech-badge img {
+    width: 18px;
+    height: 18px;
+    object-fit: contain;
+}
+
+/* Unified Mapping Color Definitions */
+.item-orange {
+    background-color: var(--item-orange);
+}
+
+.item-red {
+    background-color: var(--item-red);
+}
+
+.item-teal {
+    background-color: var(--item-teal);
+}
+
+.item-purple {
+    background-color: var(--item-purple);
+}
+
+.item-blue {
+    background-color: var(--item-blue);
+}
+
+/* ==========================================
+   6. ABOUT SECTION & VIBRANT TECH SHOWCASE
+   ========================================== */
+.about {
+    background-color: var(--bg-surface);
+    border-top: 1px solid rgba(255, 255, 255, 0.03);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.03);
+    padding: 6rem 2rem;
+}
+
+.about-flex {
+    max-width: 900px;
+    margin: 0 auto 4rem auto;
+    display: flex;
+    gap: 4rem;
+}
+
+.about-col {
+    flex: 1;
+    font-size: 1.1rem;
+    line-height: 1.7;
+    color: var(--text-muted);
+}
+
+.about-col p strong,
+.about-col p {
+    color: var(--text-light);
+}
+
+/* Core Wrapper for the About Tech Cards Layout */
+.about-skills-showcase {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding-top: 2rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.about-skills-showcase h3 {
+    text-align: center;
+    font-size: 1.4rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+    margin-bottom: 2.5rem;
+    color: var(--text-light);
+}
+
+.about-skills-container {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    flex-wrap: wrap;
+}
+
+/* Individual Vertical Skill Block Layout */
+.skill-card-block {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 90px;
+    text-align: center;
+}
+
+.skill-card-block span {
+    font-size: 0.8rem;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    color: var(--text-light); /* Always high visibility */
+    margin-bottom: 0.8rem;
+    text-transform: uppercase;
+    transition: color 0.2s ease;
+}
+
+/* Elevated, Large Colorful Circle Vectors - Default Brand Colors Always On */
+.skill-large-circle {
+    width: 75px;
+    height: 75px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+    border: 2px solid transparent;
+    transition: transform 0.25s cubic-bezier(0.175, 0.885, 0.32, 1.275), box-shadow 0.25s ease, background-color 0.25s ease;
+}
+
+.skill-large-circle i {
+    font-size: 2.2rem;
+    color: #ffffff; /* Icons are bright by default */
+}
+
+/* Default Colors Mapped Directly onto Circles */
+.html-tech .skill-large-circle     { background-color: var(--tech-html); }
+.css-tech .skill-large-circle      { background-color: var(--tech-css); }
+.js-tech .skill-large-circle       { background-color: var(--tech-js); }
+.react-tech .skill-large-circle    { background-color: var(--tech-react); }
+.node-tech .skill-large-circle     { background-color: var(--tech-node); }
+.express-tech .skill-large-circle  { background-color: #222222; border-color: rgba(255, 255, 255, 0.2); }
+.mern-tech .skill-large-circle     { background-color: var(--tech-mern); }
+.python-tech .skill-large-circle   { background-color: var(--tech-python); }
+.django-tech .skill-large-circle   { background-color: var(--tech-django); }
+
+/* Custom Dark Overrides for specific light icon contrast */
+.js-tech .skill-large-circle i { color: #12141c; }
+
+/* Interactive Hover States: Scales Up and Shifts to a Soft RGBA Alpha Variant */
+.skill-card-block:hover .skill-large-circle {
+    transform: translateY(-6px);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.4);
+}
+
+.html-tech:hover .skill-large-circle    { background-color: rgba(227, 79, 38, 0.65); }
+.css-tech:hover .skill-large-circle     { background-color: rgba(21, 114, 182, 0.65); }
+.js-tech:hover .skill-large-circle      { background-color: rgba(247, 223, 30, 0.65); }
+.react-tech:hover .skill-large-circle   { background-color: rgba(97, 218, 251, 0.65); }
+.node-tech:hover .skill-large-circle    { background-color: rgba(51, 153, 51, 0.65); }
+.express-tech:hover .skill-large-circle { background-color: rgba(255, 255, 255, 0.4); }
+.mern-tech:hover .skill-large-circle    { background-color: rgba(71, 162, 72, 0.65); }
+.python-tech:hover .skill-large-circle  { background-color: rgba(55, 118, 171, 0.65); }
+.django-tech:hover .skill-large-circle  { background-color: rgba(9, 46, 32, 0.65); }
+
+/* ==========================================
+   7. CONTACT SECTION
+   ========================================== */
+.contact {
+    background-color: var(--bg-dark);
+    padding: 6rem 2rem;
+}
+
+.contact-details {
+    max-width: 1100px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    gap: 2rem;
+    flex-wrap: wrap;
+}
+
+.contact-card {
+    flex: 1;
+    min-width: 280px;
+    text-align: center;
+    background-color: var(--bg-surface);
+    padding: 3rem 2rem;
+    border-radius: 12px;
+    border: 1px solid rgba(255, 255, 255, 0.02);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+.contact-card h3 {
+    font-size: 1.1rem;
+    margin-bottom: 1.2rem;
+    color: var(--text-light);
+    letter-spacing: 1px;
+}
+
+.contact-card h3 i {
+    color: var(--accent-red);
+    margin-right: 5px;
+}
+
+.contact-card p {
+    color: var(--text-muted);
+    font-size: 0.95rem;
+    line-height: 1.5;
+}
+
+.social-icons {
+    display: flex;
+    justify-content: center;
+    gap: 1.2rem;
+    margin-top: 0.5rem;
+}
+
+.social-icons a {
+    width: 45px;
+    height: 45px;
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    background-color: var(--bg-surface-elev);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--text-light);
+    text-decoration: none;
+    transition: all 0.2s ease;
+}
+
+.social-icons a:hover {
+    background-color: var(--accent-red);
+    color: var(--text-light);
+    border-color: var(--accent-red);
+    transform: translateY(-3px);
+    box-shadow: 0 4px 12px rgba(224, 76, 76, 0.3);
+}
+
+/* ==========================================
+   8. FOOTER
+   ========================================== */
+.footer {
+    background-color: var(--nav-bg);
+    text-align: center;
+    padding: 2.5rem;
+    font-size: 0.85rem;
+    color: var(--text-muted);
+    border-top: 1px solid rgba(255, 255, 255, 0.03);
+}
+
+/* ==========================================
+   9. MODAL STYLES (POPUP INTERFACE DEEP DARK OVERHAUL)
+   ========================================== */
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(5, 7, 10, 0.85);
+    /* Deep dark overlay layer backplate */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease;
+    z-index: 2000;
+    padding: 1.5rem;
+}
+
+.modal-overlay.open {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.modal-container {
+    background-color: var(--bg-surface);
+    /* Swapped from stark white to match cohesive dark blueprint aesthetic */
+    color: var(--text-light);
+    /* Standard readable grey/white fonts */
+    max-width: 700px;
+    width: 100%;
+    border-radius: 16px;
+    padding: 3rem 2.5rem;
+    position: relative;
+    text-align: center;
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.6);
+    border: 1px solid rgba(255, 255, 255, 0.04);
+
+    transform: translateY(-20px);
+    transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+
+    max-height: 90vh;
+    overflow-y: auto;
+    z-index: 2010;
+}
+
+.modal-overlay.open .modal-container {
+    transform: translateY(0);
+}
+
+.modal-close {
+    position: absolute;
+    top: 1.2rem;
+    right: 1.5rem;
+    background: none;
+    border: none;
+    font-size: 2.2rem;
+    color: var(--text-muted);
+    cursor: pointer;
+    line-height: 1;
+    transition: color 0.2s;
+}
+
+.modal-close:hover {
+    color: var(--accent-red);
+}
+
+.modal-title {
+    font-size: 2rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+
+#modalProjectLink {
+    cursor: pointer;
+    display: block;
+    width: 100%;
+    text-decoration: none;
+}
+
+.modal-preview-card {
+    width: 100%;
+    max-width: 440px;
+    height: 250px;
+    margin: 0 auto 2rem auto;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+    transition: transform 0.2s ease;
+}
+
+.modal-preview-card:hover {
+    transform: scale(1.02);
+}
+
+.modal-description {
+    font-size: 1.05rem;
+    line-height: 1.65;
+    text-align: justify;
+    max-width: 600px;
+    margin: 0 auto 1.5rem auto;
+    color: var(--text-muted);
+}
+
+.modal-action-btn {
+    display: inline-block;
+    background-color: var(--accent-red);
+    color: var(--text-light);
+    text-decoration: none;
+    font-weight: 700;
+    padding: 0.8rem 1.8rem;
+    border-radius: 6px;
+    font-size: 0.9rem;
+    letter-spacing: 0.5px;
+    box-shadow: 0 4px 15px rgba(224, 76, 76, 0.25);
+    transition: background-color 0.2s ease, transform 0.2s ease;
+}
+
+.modal-action-btn:hover {
+    background-color: #ff5c5c;
+    transform: translateY(-2px);
+}
+
+/* ==========================================
+   10. RESPONSIVE DESIGN (MOBILE FIXES)
+   ========================================== */
+@media (max-width: 768px) {
+    .nav-container {
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    .nav-links {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 1rem;
+    }
+
+    .about-flex {
+        flex-direction: column;
+        gap: 2rem;
+    }
+
+    .contact-details {
+        flex-direction: column;
+    }
+
+    h2 {
+        font-size: 2rem;
+    }
+
+    .hero h1,
+    .college-hero h1 {
+        font-size: 2.2rem;
+    }
+
+    .about-skills-container {
+        gap: 1.2rem;
+    }
+}
+
+@media (max-width: 576px) {
+    .modal-container {
+        padding: 2.5rem 1.5rem;
+    }
+
+    .modal-title {
+        font-size: 1.5rem;
+    }
+
+    .modal-preview-card {
+        height: 180px;
+    }
+
+    .modal-preview-card .inner-circle {
+        width: 95px;
+        height: 95px;
+    }
+
+    .modal-preview-card .inner-circle i {
+        font-size: 2.2rem;
+    }
+}

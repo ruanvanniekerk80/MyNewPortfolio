@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+   <meta charset='utf-8'>
+   <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+   <title>Thor: A God of Thunder Adventure</title>
+   <meta name='viewport' content='width=device-width, initial-scale=1'>
+   <link rel='stylesheet' type='text/css' media='screen' href="myStory.css">
+</head>
+
+<body>
+   <div id="story">
+      <img src="Thor.webp" alt="">
+   </div>
+   <div id="siteFooter">
+      <div id="question"></div>
+      <div id="answer">Enter your answer:
+         <input type="text" id="yourAnswer" />
+         <button type="button" id="submit">Go!</button>
+      </div>
+   </div>
+
+   <!-- Hidden story parts revealed by JavaScript -->
+
+   <div class="storyPart" id="answer01">
+      <p>You are Thor, the god of Thunder. You stand in the golden halls of Asgard, Mjolnir resting at
+         your side.</p>
+      <p>Suddenly, Heimdall calls out: dark forces have been detected on earth. Loki may be involved.</p>
+      <p>At the same time, Odin has summoned you to remain in Asgard and prepare for a possible war in Jotunheim.
+      </p>
+      <p>What do you do? Travel to Earth to protect it, or remain in Asgard?</p>
+   </div>
+
+   <div class="storyPart" id="answer02">
+      <p>Answer Yes when you're ready!</p>
+   </div>
+
+   <div class="storyPart" id="err0">
+      <p>Please answer yes or no.</p>
+   </div>
+
+   <div class="storyPart" id="answer11">
+      <p>You choose to travel to Earth. With a mighty spin of Mjolnir, lightning surrounds you as you soar through the
+         Bifrost.</p>
+      <p>You land in New York City just as chaos erupts — creatures from another realm are attacking.</p>
+      <p>As you fight them off, you hear a familiar voice.</p>
+      <p>"Brother."</p>
+      <p>Loki steps from the shadows, smiling as always. He claims this invasion is only the beginning.</p>
+      <p>You must decide: confront Loki immediately, or help the people of Earth escape to safety first.</p>
+   </div>
+
+   <div class="storyPart" id="answer12">
+      <p>You remain in Asgard, honoring Odin’s command.</p>
+      <p>Without your presence, Earth’s defenders struggle — but Asgard is saved from a surprise attack.</p>
+      <p>Odin nods in approval, though you cannot shake the feeling that Earth needed you.</p>
+   </div>
+
+   <div class="storyPart" id="err1">
+      <p>Please answer Earth or Asgard.</p>
+   </div>
+
+   <div class="storyPart" id="answer21">
+      <p>You confront Loki at once. Thunder crashes as you battle across the city.</p>
+      <p>In the end, Loki is defeated and captured. The invasion collapses without its leader.</p>
+      <p>The people of Earth cheer as you stand victorious, lightning fading around you.</p>
+      <p>You smile, knowing you have once again proven yourself worthy.</p>
+   </div>
+
+   <div class="storyPart" id="answer22">
+      <p>You choose to save the people first, guiding civilians to safety.</p>
+      <p>When you return, Loki has escaped.</p>
+      <p>Though Earth is safe for now, you know your brother will return — and next time, the battle will be even
+         greater.</p>
+   </div>
+
+   <div class="storyPart" id="err2">
+      <p>Please answer Fight or Save.</p>
+   </div>
+
+   <script src="myStory.js"></script>
+</body>
+
+</html>
