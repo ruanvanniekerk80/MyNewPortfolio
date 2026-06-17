@@ -6,13 +6,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Portfolio - Home</title>
 
+    <!-- =========================================================
+         STYLESHEETS
+         ========================================================= -->
     <link rel="stylesheet" href="style.css">
-
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 
 <body>
 
+    <!-- =========================================================
+         START NAVIGATION BAR
+         ========================================================= -->
     <nav class="navbar">
         <div class="nav-container">
             <a href="index.html" class="nav-logo">HOME</a>
@@ -20,13 +25,19 @@
                 <li><a href="#portfolio" class="nav-item-link" id="nav-portfolio">PORTFOLIO</a></li>
                 <li><a href="#about" class="nav-item-link" id="nav-about">ABOUT</a></li>
                 <li><a href="#contact" class="nav-item-link" id="nav-contact">CONTACT</a></li>
-
                 <li><a href="college.html" class="nav-college-btn"><i class="fa-solid fa-graduation-cap"></i> CODE
                         COLLEGE</a></li>
             </ul>
         </div>
     </nav>
+    <!-- =========================================================
+         END NAVIGATION BAR
+         ========================================================= -->
 
+
+    <!-- =========================================================
+         START HERO / HEADER SECTION
+         ========================================================= -->
     <header class="hero" id="hero">
         <div class="hero-content">
             <img src="img/shutterstock_402724045.jpg" alt="Profile" class="avatar">
@@ -41,7 +52,14 @@
             <p class="subtitle">Web Developer</p>
         </div>
     </header>
+    <!-- =========================================================
+         END HERO / HEADER SECTION
+         ========================================================= -->
 
+
+    <!-- =========================================================
+         START PORTFOLIO / PROJECTS SECTION
+         ========================================================= -->
     <section id="portfolio" class="portfolio homepage-section">
         <h2>REAL-WORLD PROJECTS</h2>
 
@@ -53,12 +71,10 @@
 
         <div class="portfolio-grid">
 
+            <!-- PROJECT CARD 1: IT CRM Ticket System -->
             <div class="portfolio-item item-red" data-title="IT CRM Ticket system" data-icon="fa-diagram-project"
-                data-link="https://full-stack-django-project-pi.vercel.app/" data-desc="CRM Web Application (Django) A full-stack Customer Relationship Management (CRM) system built using Django,
-                 designed to streamline customer data management and task tracking. The application features secure user authentication,
-                  role-based access (admin and standard users), and an intuitive dashboard for managing customer interactions. Users can create, update,
-                   and delete records, as well as track tasks and activities مرتبط with each client. The project follows Django’s MVT architecture, with a focus on clean UI design,
-                    efficient database handling, and scalable backend logic.">
+                data-link="https://full-stack-django-project-pi.vercel.app/"
+                data-desc="CRM Web Application (Django) A full-stack Customer Relationship Management (CRM) system built using Django, designed to streamline customer data management and task tracking. The application features secure user authentication, role-based access (admin and standard users), and an intuitive dashboard for managing customer interactions. Users can create, update, and delete records, as well as track tasks and activities مرتبط with each client. The project follows Django’s MVT architecture, with a focus on clean UI design, efficient database handling, and scalable backend logic.">
                 <div class="inner-circle"><i class="fa-solid fa-diagram-project"></i></div>
 
                 <div class="tech-badge-container">
@@ -67,9 +83,11 @@
                     <div class="tech-badge" title="CSS3"><i class="fa-brands fa-css3-alt"></i></div>
                 </div>
             </div>
+            <!-- END PROJECT CARD 1 -->
 
+            <!-- PROJECT CARD 2: Vehicle Trading Platform -->
             <div class="portfolio-item item-blue" data-title="VEHICLE TRADING PLATFORM" data-icon="fa-car"
-                data-link="https://your-live-demo-link.com"
+                data-link="https://car-dealership-hub-react-project.vercel.app/"
                 data-desc="A commercial automotive platform built to handle seamless buying and selling transactions for motor cars, featuring dynamic inventory management, user profiles, and responsive search filtering.">
                 <div class="inner-circle"><i class="fa-solid fa-car"></i></div>
 
@@ -79,10 +97,18 @@
                     <div class="tech-badge" title="JavaScript"><i class="fa-brands fa-js"></i></div>
                 </div>
             </div>
+            <!-- END PROJECT CARD 2 -->
 
         </div>
     </section>
+    <!-- =========================================================
+         END PORTFOLIO / PROJECTS SECTION
+         ========================================================= -->
 
+
+    <!-- =========================================================
+         START ABOUT ME SECTION
+         ========================================================= -->
     <section id="about" class="about homepage-section">
         <h2>ABOUT</h2>
         <div class="divider">
@@ -90,6 +116,8 @@
             <i class="fa-solid fa-question"></i>
             <div class="line"></div>
         </div>
+
+        <!-- About Biography Text Layout -->
         <div class="about-flex">
             <!-- Column 1: Core Identity & Deep IT Roots -->
             <div class="about-col">
@@ -112,6 +140,7 @@
             </div>
         </div>
 
+        <!-- Technical Skills Grid Showcase -->
         <div class="about-skills-showcase">
             <h3>TECHNICAL SKILLSET & ARCHITECTURES</h3>
             <div class="about-skills-container">
@@ -164,7 +193,14 @@
             </div>
         </div>
     </section>
+    <!-- =========================================================
+         END ABOUT ME SECTION
+         ========================================================= -->
 
+
+    <!-- =========================================================
+         START CONTACT SECTION
+         ========================================================= -->
     <section id="contact" class="contact homepage-section">
         <h2>CONTACT ME</h2>
 
@@ -175,34 +211,51 @@
         </div>
 
         <div class="contact-details">
+            <!-- Location Card -->
             <div class="contact-card">
                 <h3><i class="fa-solid fa-location-dot"></i> LOCATION</h3>
                 <p>Randburg, Gauteng, South Africa</p>
             </div>
 
+            <!-- Social Links Card -->
             <div class="contact-card">
                 <h3>AROUND THE WEB</h3>
                 <div class="social-icons">
                     <a title="Linkedin"
                         href="https://www.linkedin.com/in/ruan-van-niekerk-3a2411150/?skipRedirect=true"><i
                             class="fa-brands fa-linkedin-in"></i></a>
-                    <a href="#"><i class="fa-regular fa-file-pdf"></i></a>
+                    <a href="img/C V RUAN new.pdf" title="View Resume PDF"><i class="fa-regular fa-file-pdf"></i></a>
                 </div>
             </div>
 
+            <!-- Comms Details Card -->
             <div class="contact-card">
                 <h3><i class="fa-solid fa-phone-flip"></i> TELEPHONE</h3>
                 <p>+27 71 602 6821</p>
                 <h3 style="margin-top: 1.5rem;"><i class="fa-solid fa-envelope"></i> EMAIL</h3>
-                <p>ruan.vaniekerk@live.com</p>
+                <p>ruan.vanniekerk@live.com</p>
             </div>
         </div>
     </section>
+    <!-- =========================================================
+         END CONTACT SECTION
+         ========================================================= -->
 
+
+    <!-- =========================================================
+         START FOOTER
+         ========================================================= -->
     <footer class="footer">
         <p>Copyright &copy; My Website 2026</p>
     </footer>
+    <!-- =========================================================
+         END FOOTER
+         ========================================================= -->
 
+
+    <!-- =========================================================
+         START PROJECT MODAL POPUP
+         ========================================================= -->
     <div class="modal-overlay" id="projectModal">
         <div class="modal-container">
 
@@ -230,7 +283,14 @@
 
         </div>
     </div>
+    <!-- =========================================================
+         END PROJECT MODAL POPUP
+         ========================================================= -->
 
+
+    <!-- =========================================================
+         SCRIPTS
+         ========================================================= -->
     <script src="script.js"></script>
 </body>
 
