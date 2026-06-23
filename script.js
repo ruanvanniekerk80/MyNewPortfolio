@@ -11,7 +11,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const modalVisualBlock = document.getElementById('modalVisualBlock');
     const modalInnerIcon = document.getElementById('modalInnerIcon');
     const modalDescription = document.getElementById('modalDescription');
-
+    
     // Targeted link components
     const modalProjectLink = document.getElementById('modalProjectLink'); // Clickable picture wrapper
     const modalLinkBtn = document.getElementById('modalLinkBtn');         // Targeted view button (index.html only)
@@ -108,4 +108,15 @@ document.addEventListener('DOMContentLoaded', () => {
         const observer = new IntersectionObserver(observerCallback, observerOptions);
         sections.forEach(section => observer.observe(section));
     }
+
+    // -----------------------------------------------------------------
+    // 3. TOP OF SCREEN SCROLL RESET
+    // -----------------------------------------------------------------
+    window.addEventListener('scroll', () => {
+        if (window.scrollY < 200) {
+            navLinks.forEach(link => {
+                link.classList.remove('highlight-active');
+            });
+        }
+    });
 });

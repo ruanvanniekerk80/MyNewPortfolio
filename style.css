@@ -182,13 +182,7 @@ h2 {
 /* ==========================================
    4. HERO SECTIONS (HOME & COLLEGE)
    ========================================== */
-.hero {
-    background-color: var(--bg-surface);
-    border-bottom: 1px solid rgba(255, 255, 255, 0.03);
-    padding: 7rem 2rem;
-    text-align: center;
-}
-
+.hero,
 .college-hero {
     background-color: var(--bg-surface);
     border-bottom: 1px solid rgba(255, 255, 255, 0.03);
@@ -246,14 +240,18 @@ h2 {
 .portfolio-item {
     width: 100%;
     max-width: 360px;
-    height: 230px;
+    min-height: 250px;
+    /* Changed from fixed height to min-height to safely protect elements */
+    padding: 20px;
     border-radius: 12px;
     display: flex;
+    flex-direction: column;
+    /* Stacks title -> circle -> badges cleanly */
     align-items: center;
     justify-content: center;
     cursor: pointer;
     position: relative;
-    /* Essential reference context to snap badges inside card layout */
+    /* Essential reference context to snap absolute elements */
     transition: transform 0.25s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.25s ease;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
 }
@@ -261,6 +259,17 @@ h2 {
 .portfolio-item:hover {
     transform: translateY(-5px);
     box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+}
+
+.project-title {
+    font-size: 1.1rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 15px;
+    color: var(--text-light);
+    /* Fixed contrast matching your dark mode blueprint */
+    text-align: center;
 }
 
 .inner-circle {
@@ -273,6 +282,8 @@ h2 {
     justify-content: center;
     border: 1px solid rgba(255, 255, 255, 0.08);
     transition: background-color 0.2s;
+    margin-bottom: 15px;
+    /* Creates consistent spacing above your badge rails */
 }
 
 .portfolio-item:hover .inner-circle {
@@ -287,12 +298,11 @@ h2 {
 
 /* Tech Badges Container Layout alignment */
 .tech-badge-container {
-    position: absolute;
-    bottom: 15px;
-    left: 20px;
     display: flex;
     gap: 8px;
     z-index: 5;
+    margin-top: auto;
+    /* Pushes the badge tracking line neatly down to bottom balance */
 }
 
 /* Round Badge Shapes for Tech Profile Track */
@@ -391,7 +401,7 @@ h2 {
 .about-skills-container {
     display: flex;
     justify-content: center;
-    gap: 2rem;
+    gap: 2.5rem;
     flex-wrap: wrap;
 }
 
@@ -400,7 +410,7 @@ h2 {
     display: flex;
     flex-direction: column;
     align-items: center;
-    width: 90px;
+    width: 100px;
     text-align: center;
 }
 
@@ -408,10 +418,25 @@ h2 {
     font-size: 0.8rem;
     font-weight: 700;
     letter-spacing: 0.5px;
-    color: var(--text-light); /* Always high visibility */
+    color: var(--text-light);
     margin-bottom: 0.8rem;
+    /* Adjusted for structural separation from the circle below */
     text-transform: uppercase;
     transition: color 0.2s ease;
+}
+
+/* Experience Level Labels - Re-spaced to sit beneath the circle */
+.skill-level-tag {
+    font-size: 0.7rem;
+    font-weight: 600;
+    color: var(--text-muted);
+    background-color: var(--bg-surface-elev);
+    padding: 0.2rem 0.5rem;
+    border-radius: 4px;
+    margin-top: 0.8rem;
+    /* Creates perfect clearance under the logo circle */
+    letter-spacing: 0.3px;
+    border: 1px solid rgba(255, 255, 255, 0.03);
 }
 
 /* Elevated, Large Colorful Circle Vectors - Default Brand Colors Always On */
@@ -429,22 +454,51 @@ h2 {
 
 .skill-large-circle i {
     font-size: 2.2rem;
-    color: #ffffff; /* Icons are bright by default */
+    color: #ffffff;
 }
 
 /* Default Colors Mapped Directly onto Circles */
-.html-tech .skill-large-circle     { background-color: var(--tech-html); }
-.css-tech .skill-large-circle      { background-color: var(--tech-css); }
-.js-tech .skill-large-circle       { background-color: var(--tech-js); }
-.react-tech .skill-large-circle    { background-color: var(--tech-react); }
-.node-tech .skill-large-circle     { background-color: var(--tech-node); }
-.express-tech .skill-large-circle  { background-color: #222222; border-color: rgba(255, 255, 255, 0.2); }
-.mern-tech .skill-large-circle     { background-color: var(--tech-mern); }
-.python-tech .skill-large-circle   { background-color: var(--tech-python); }
-.django-tech .skill-large-circle   { background-color: var(--tech-django); }
+.html-tech .skill-large-circle {
+    background-color: var(--tech-html);
+}
+
+.css-tech .skill-large-circle {
+    background-color: var(--tech-css);
+}
+
+.js-tech .skill-large-circle {
+    background-color: var(--tech-js);
+}
+
+.react-tech .skill-large-circle {
+    background-color: var(--tech-react);
+}
+
+.node-tech .skill-large-circle {
+    background-color: var(--tech-node);
+}
+
+.mern-tech .skill-large-circle {
+    background-color: var(--tech-mern);
+}
+
+.python-tech .skill-large-circle {
+    background-color: var(--tech-python);
+}
+
+.django-tech .skill-large-circle {
+    background-color: var(--tech-django);
+}
+
+.express-tech .skill-large-circle {
+    background-color: #222222;
+    border-color: rgba(255, 255, 255, 0.2);
+}
 
 /* Custom Dark Overrides for specific light icon contrast */
-.js-tech .skill-large-circle i { color: #12141c; }
+.js-tech .skill-large-circle i {
+    color: #12141c;
+}
 
 /* Interactive Hover States: Scales Up and Shifts to a Soft RGBA Alpha Variant */
 .skill-card-block:hover .skill-large-circle {
@@ -452,15 +506,41 @@ h2 {
     box-shadow: 0 12px 24px rgba(0, 0, 0, 0.4);
 }
 
-.html-tech:hover .skill-large-circle    { background-color: rgba(227, 79, 38, 0.65); }
-.css-tech:hover .skill-large-circle     { background-color: rgba(21, 114, 182, 0.65); }
-.js-tech:hover .skill-large-circle      { background-color: rgba(247, 223, 30, 0.65); }
-.react-tech:hover .skill-large-circle   { background-color: rgba(97, 218, 251, 0.65); }
-.node-tech:hover .skill-large-circle    { background-color: rgba(51, 153, 51, 0.65); }
-.express-tech:hover .skill-large-circle { background-color: rgba(255, 255, 255, 0.4); }
-.mern-tech:hover .skill-large-circle    { background-color: rgba(71, 162, 72, 0.65); }
-.python-tech:hover .skill-large-circle  { background-color: rgba(55, 118, 171, 0.65); }
-.django-tech:hover .skill-large-circle  { background-color: rgba(9, 46, 32, 0.65); }
+.html-tech:hover .skill-large-circle {
+    background-color: rgba(227, 79, 38, 0.65);
+}
+
+.css-tech:hover .skill-large-circle {
+    background-color: rgba(21, 114, 182, 0.65);
+}
+
+.js-tech:hover .skill-large-circle {
+    background-color: rgba(247, 223, 30, 0.65);
+}
+
+.react-tech:hover .skill-large-circle {
+    background-color: rgba(97, 218, 251, 0.65);
+}
+
+.node-tech:hover .skill-large-circle {
+    background-color: rgba(51, 153, 51, 0.65);
+}
+
+.express-tech:hover .skill-large-circle {
+    background-color: rgba(255, 255, 255, 0.4);
+}
+
+.mern-tech:hover .skill-large-circle {
+    background-color: rgba(71, 162, 72, 0.65);
+}
+
+.python-tech:hover .skill-large-circle {
+    background-color: rgba(55, 118, 171, 0.65);
+}
+
+.django-tech:hover .skill-large-circle {
+    background-color: rgba(9, 46, 32, 0.65);
+}
 
 /* ==========================================
    7. CONTACT SECTION
@@ -588,10 +668,8 @@ h2 {
     text-align: center;
     box-shadow: 0 20px 50px rgba(0, 0, 0, 0.6);
     border: 1px solid rgba(255, 255, 255, 0.04);
-
     transform: translateY(-20px);
     transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-
     max-height: 90vh;
     overflow-y: auto;
     z-index: 2010;
@@ -735,4 +813,16 @@ h2 {
     .modal-preview-card .inner-circle i {
         font-size: 2.2rem;
     }
+}
+
+/* Custom match for Font Awesome structure */
+.fa-django-mock {
+    font-family: "Times New Roman", "Georgia", serif;
+    font-weight: 900;
+    font-style: normal;
+    text-transform: lowercase;
+    font-size: 1.1em;
+    display: inline-block;
+    line-height: 1;
+    letter-spacing: -1px;
 }
