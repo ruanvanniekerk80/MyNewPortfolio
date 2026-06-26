@@ -14,14 +14,16 @@ document.addEventListener('DOMContentLoaded', () => {
     
     // Targeted link components
     const modalProjectLink = document.getElementById('modalProjectLink'); // Clickable picture wrapper
-    const modalLinkBtn = document.getElementById('modalLinkBtn');         // Targeted view button (index.html only)
+    const modalLinkBtn = document.getElementById('modalLinkBtn');         // Targeted view button
+    const modalGithubBtn = document.getElementById('modalGithubBtn');     // Round GitHub button
 
     portfolioItems.forEach(item => {
         item.addEventListener('click', () => {
             const title = item.getAttribute('data-title');
             const desc = item.getAttribute('data-desc');
             const iconClass = item.getAttribute('data-icon');
-            const projectLink = item.getAttribute('data-link'); // Extract destination link
+            const projectLink = item.getAttribute('data-link'); // Extract deployment link
+            const repoLink = item.getAttribute('data-repo');   // Extract source repository link
             const colorClass = Array.from(item.classList).find(cls => cls.startsWith('item-'));
 
             if (modalTitle) modalTitle.textContent = title;
@@ -34,13 +36,23 @@ document.addEventListener('DOMContentLoaded', () => {
                 modalProjectLink.href = projectLink || '#';
             }
 
-            // Map extracted data link onto button element target destination (if it exists on index.html)
+            // Map extracted data link onto button element target destination
             if (modalLinkBtn) {
                 if (projectLink) {
                     modalLinkBtn.href = projectLink;
                     modalLinkBtn.style.display = 'inline-block'; // Show if link exists
                 } else {
                     modalLinkBtn.style.display = 'none'; // Hide cleanly if empty
+                }
+            }
+
+            // Map extracted data repository link onto the round GitHub link button
+            if (modalGithubBtn) {
+                if (repoLink) {
+                    modalGithubBtn.href = repoLink;
+                    modalGithubBtn.style.display = 'inline-flex'; // Show round circle
+                } else {
+                    modalGithubBtn.style.display = 'none'; // Hide cleanly if no repository exists
                 }
             }
 

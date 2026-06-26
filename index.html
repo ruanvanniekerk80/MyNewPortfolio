@@ -53,7 +53,8 @@
         <div class="portfolio-grid">
 
             <div class="portfolio-item item-red" data-title="IT CRM Ticket system" data-icon="fa-diagram-project"
-                data-link="https://full-stack-django-project-pi.vercel.app/" data-desc="CRM Web Application (Django) — A full-stack Customer Relationship Management (CRM) system 
+                data-link="https://full-stack-django-project-pi.vercel.app/"
+                data-repo="https://github.com/ruanvanniekerk80/FullStack_Django_Project" data-desc="CRM Web Application (Django) — A full-stack Customer Relationship Management (CRM) system 
                     built using Django, designed to streamline customer data management and task tracking. 
                     The application features secure user authentication, role-based access control, and 
                     an intuitive dashboard. Users can seamlessly perform CRUD operations on client records 
@@ -73,7 +74,8 @@
             </div>
 
             <div class="portfolio-item item-blue" data-title="Car Dealership Platform" data-icon="fa-car"
-                data-link="https://car-dealership-hub-react-project.vercel.app/" data-desc="Vehicle Trading Platform (React) — A commercial automotive marketplace application 
+                data-link="https://car-dealership-hub-react-project.vercel.app/"
+                data-repo="https://github.com/ruanvanniekerk80/car-dealership-hub-React-Project" data-desc="Vehicle Trading Platform (React) — A commercial automotive marketplace application 
                     built to handle seamless buying and selling transactions for motor vehicles. 
                     The system features real-time dynamic inventory management, secure user profiles, 
                     and highly responsive search filtering. The frontend is built for modern browsers 
@@ -245,13 +247,24 @@
 
             <p id="modalDescription" class="modal-description">Project description goes here...</p>
 
-            <a href="#" id="modalLinkBtn" target="_blank" class="modal-action-btn">
-                <i class="fa-solid fa-arrow-up-right-from-square"></i> VIEW LIVE PROJECT
-            </a>
+            <div class="modal-buttons-row"
+                style="display: flex; align-items: center; justify-content: center; gap: 1.2rem;">
+                <a href="#" id="modalLinkBtn" target="_blank" class="modal-action-btn"
+                    style="padding: 0.6rem 1.4rem; font-size: 0.8rem;">
+                    <i class="fa-solid fa-arrow-up-right-from-square"></i> VIEW LIVE PROJECT
+                </a>
 
+                <a href="#" id="modalGithubBtn" target="_blank"
+                    style="width: 52px; height: 52px; border-radius: 50%; background-color: #24292e; color: #ffffff; display: inline-flex; align-items: center; justify-content: center; text-decoration: none; font-size: 1.6rem; box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3); border: 1px solid rgba(255, 255, 255, 0.1); transition: background-color 0.2s, transform 0.2s;"
+                    onmouseover="this.style.backgroundColor='#404448'; this.style.transform='translateY(-3px)';"
+                    onmouseout="this.style.backgroundColor='#24292e'; this.style.transform='translateY(0)';"
+                    title="View Source Code Repository">
+                    <i class="fa-brands fa-github"></i>
+                </a>
+
+            </div>
         </div>
-    </div>
-    <script src="script.js"></script>
+        <script src="script.js"></script>
 </body>
 
 </html>
