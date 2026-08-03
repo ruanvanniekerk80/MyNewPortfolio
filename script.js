@@ -1,6 +1,7 @@
 document.addEventListener('DOMContentLoaded', () => {
+
     // -----------------------------------------------------------------
-    // 1. MODAL COMPONENT CONTROLS
+    // 1. MODAL COMPONENT CONTROLS (PROJECTS)
     // -----------------------------------------------------------------
     const portfolioItems = document.querySelectorAll('.portfolio-item');
     const modal = document.getElementById('projectModal');
@@ -83,12 +84,6 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    document.addEventListener('keydown', (e) => {
-        if (e.key === 'Escape' && modal && modal.classList.contains('open')) {
-            closeModal();
-        }
-    });
-
     // -----------------------------------------------------------------
     // 2. SCROLL SPY EFFECT LOGIC (HOMEPAGE ONLY)
     // -----------------------------------------------------------------
@@ -131,4 +126,54 @@ document.addEventListener('DOMContentLoaded', () => {
             });
         }
     });
+
+    // -----------------------------------------------------------------
+    // 4. CERTIFICATION MODAL CONTROLLER
+    // -----------------------------------------------------------------
+    const certModal = document.getElementById('certModal');
+    const certModalTitle = document.getElementById('certModalTitle');
+    const certModalImg = document.getElementById('certModalImg');
+    const closeCertModalBtn = document.getElementById('closeCertModal');
+    const certCards = document.querySelectorAll('.cert-card');
+
+    certCards.forEach(card => {
+        card.addEventListener('click', () => {
+            const title = card.getAttribute('data-cert-title');
+            const imgSrc = card.getAttribute('data-cert-img');
+
+            if (certModalTitle) certModalTitle.textContent = title;
+            if (certModalImg) certModalImg.src = imgSrc;
+
+            if (certModal) {
+                certModal.classList.add('open');
+            }
+            document.body.style.overflow = 'hidden';
+        });
+    });
+
+    const closeCertModal = () => {
+        if (certModal) certModal.classList.remove('open');
+        document.body.style.overflow = '';
+    };
+
+    if (closeCertModalBtn) closeCertModalBtn.addEventListener('click', closeCertModal);
+
+    if (certModal) {
+        certModal.addEventListener('click', (e) => {
+            if (e.target === certModal) closeCertModal();
+        });
+    }
+
+    // Shared Escape Key Listener for both Modals
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape') {
+            if (modal && modal.classList.contains('open')) {
+                closeModal();
+            }
+            if (certModal && certModal.classList.contains('open')) {
+                closeCertModal();
+            }
+        }
+    });
+
 });

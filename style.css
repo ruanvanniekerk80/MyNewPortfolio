@@ -241,17 +241,14 @@ h2 {
     width: 100%;
     max-width: 360px;
     min-height: 250px;
-    /* Changed from fixed height to min-height to safely protect elements */
     padding: 20px;
     border-radius: 12px;
     display: flex;
     flex-direction: column;
-    /* Stacks title -> circle -> badges cleanly */
     align-items: center;
     justify-content: center;
     cursor: pointer;
     position: relative;
-    /* Essential reference context to snap absolute elements */
     transition: transform 0.25s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.25s ease;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
 }
@@ -268,7 +265,6 @@ h2 {
     letter-spacing: 1px;
     margin-bottom: 15px;
     color: var(--text-light);
-    /* Fixed contrast matching your dark mode blueprint */
     text-align: center;
 }
 
@@ -283,7 +279,6 @@ h2 {
     border: 1px solid rgba(255, 255, 255, 0.08);
     transition: background-color 0.2s;
     margin-bottom: 15px;
-    /* Creates consistent spacing above your badge rails */
 }
 
 .portfolio-item:hover .inner-circle {
@@ -296,16 +291,13 @@ h2 {
     opacity: 0.9;
 }
 
-/* Tech Badges Container Layout alignment */
 .tech-badge-container {
     display: flex;
     gap: 8px;
     z-index: 5;
     margin-top: auto;
-    /* Pushes the badge tracking line neatly down to bottom balance */
 }
 
-/* Round Badge Shapes for Tech Profile Track */
 .tech-badge {
     width: 34px;
     height: 34px;
@@ -331,7 +323,6 @@ h2 {
     object-fit: contain;
 }
 
-/* Unified Mapping Color Definitions */
 .item-orange {
     background-color: var(--item-orange);
 }
@@ -381,7 +372,6 @@ h2 {
     color: var(--text-light);
 }
 
-/* Core Wrapper for the About Tech Cards Layout */
 .about-skills-showcase {
     max-width: 1000px;
     margin: 0 auto;
@@ -405,7 +395,6 @@ h2 {
     flex-wrap: wrap;
 }
 
-/* Individual Vertical Skill Block Layout */
 .skill-card-block {
     display: flex;
     flex-direction: column;
@@ -420,12 +409,10 @@ h2 {
     letter-spacing: 0.5px;
     color: var(--text-light);
     margin-bottom: 0.8rem;
-    /* Adjusted for structural separation from the circle below */
     text-transform: uppercase;
     transition: color 0.2s ease;
 }
 
-/* Experience Level Labels - Re-spaced to sit beneath the circle */
 .skill-level-tag {
     font-size: 0.7rem;
     font-weight: 600;
@@ -434,12 +421,10 @@ h2 {
     padding: 0.2rem 0.5rem;
     border-radius: 4px;
     margin-top: 0.8rem;
-    /* Creates perfect clearance under the logo circle */
     letter-spacing: 0.3px;
     border: 1px solid rgba(255, 255, 255, 0.03);
 }
 
-/* Elevated, Large Colorful Circle Vectors - Default Brand Colors Always On */
 .skill-large-circle {
     width: 75px;
     height: 75px;
@@ -457,7 +442,6 @@ h2 {
     color: #ffffff;
 }
 
-/* Default Colors Mapped Directly onto Circles */
 .html-tech .skill-large-circle {
     background-color: var(--tech-html);
 }
@@ -495,12 +479,10 @@ h2 {
     border-color: rgba(255, 255, 255, 0.2);
 }
 
-/* Custom Dark Overrides for specific light icon contrast */
 .js-tech .skill-large-circle i {
     color: #12141c;
 }
 
-/* Interactive Hover States: Scales Up and Shifts to a Soft RGBA Alpha Variant */
 .skill-card-block:hover .skill-large-circle {
     transform: translateY(-6px);
     box-shadow: 0 12px 24px rgba(0, 0, 0, 0.4);
@@ -540,6 +522,121 @@ h2 {
 
 .django-tech:hover .skill-large-circle {
     background-color: rgba(9, 46, 32, 0.65);
+}
+
+/* ==========================================
+   NEW: CERTIFICATIONS SECTION & THUMBNAILS
+   ========================================== */
+.certifications-showcase {
+    margin-top: 4rem;
+    padding-top: 3rem;
+    border-top: 1px dashed rgba(255, 255, 255, 0.1);
+}
+
+.certifications-showcase h3 {
+    text-align: center;
+    font-size: 1.4rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+    margin-bottom: 2.5rem;
+    color: var(--text-light);
+}
+
+.certifications-container {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    flex-wrap: wrap;
+}
+
+.cert-card {
+    width: 210px;
+    background-color: var(--bg-surface-elev);
+    border-radius: 12px;
+    padding: 14px;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    cursor: pointer;
+    text-align: center;
+    transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+}
+
+.cert-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
+    border-color: var(--accent-red);
+}
+
+.cert-thumbnail {
+    width: 100%;
+    height: 135px;
+    border-radius: 8px;
+    overflow: hidden;
+    position: relative;
+    background-color: #0d0f15;
+}
+
+.cert-thumbnail img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.cert-overlay-icon {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(224, 76, 76, 0.75);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.cert-overlay-icon i {
+    font-size: 1.8rem;
+    color: #ffffff;
+}
+
+.cert-card:hover .cert-thumbnail img {
+    transform: scale(1.05);
+    opacity: 0.8;
+}
+
+.cert-card:hover .cert-overlay-icon {
+    opacity: 1;
+}
+
+.cert-card h4 {
+    margin-top: 12px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--text-light);
+    letter-spacing: 0.5px;
+}
+
+.cert-modal-container {
+    max-width: 850px;
+    padding: 2.5rem 2rem;
+}
+
+.cert-modal-body {
+    width: 100%;
+    max-height: 70vh;
+    overflow-y: auto;
+    border-radius: 8px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.5);
+    background-color: var(--bg-dark);
+}
+
+.cert-modal-body img {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 8px;
 }
 
 /* ==========================================
@@ -639,7 +736,6 @@ h2 {
     width: 100%;
     height: 100%;
     background-color: rgba(5, 7, 10, 0.85);
-    /* Deep dark overlay layer backplate */
     display: flex;
     align-items: center;
     justify-content: center;
@@ -657,9 +753,7 @@ h2 {
 
 .modal-container {
     background-color: var(--bg-surface);
-    /* Swapped from stark white to match cohesive dark blueprint aesthetic */
     color: var(--text-light);
-    /* Standard readable grey/white fonts */
     max-width: 700px;
     width: 100%;
     border-radius: 16px;
@@ -815,7 +909,6 @@ h2 {
     }
 }
 
-/* Custom match for Font Awesome structure */
 .fa-django-mock {
     font-family: "Times New Roman", "Georgia", serif;
     font-weight: 900;
